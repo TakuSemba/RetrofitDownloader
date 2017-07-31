@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion "26.0.1"
+  defaultConfig {
+    applicationId "com.takusemba.retrofitdownloader"
+    minSdkVersion 15
+    targetSdkVersion 26
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    androidTest.java.srcDirs += 'src/androidTest/kotlin'
+  }
+}
+
+ext {
+  supportLibVersion = '26.0.0'
+  retrofitVersion = '2.2.0'
+  okhttpVersion = '3.6.0'
+}
+
+dependencies {
+  // kotlin
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+  // android support library
+  compile "com.android.support:appcompat-v7:$supportLibVersion"
+  compile "com.android.support:design:$supportLibVersion"
+
+  // retrofit
+  compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+  compile "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+  compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+  compile "com.squareup.retrofit2:converter-wire:$retrofitVersion"
+  compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+  compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+  // rx
+  compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+  // Because RxAndroid releases are few and far between, it is recommended you also
+  // explicitly depend on RxJava's latest version for bug fixes and new features.
+  compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+  compile 'io.reactivex.rxjava2:rxkotlin:2.0.0'
+  compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC1'
+
+  // ui
+  kapt 'com.android.databinding:compiler:2.3.2'
+  compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+  // log
+  compile 'com.jakewharton.timber:timber:4.5.1'
+}
