@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
     /**
      * 1GB downloadable sample file
      */
-        private val contentUrl = "http://ipv4.download.thinkbroadband.com/1GB.zip"
+    //        private val contentUrl = "http://ipv4.download.thinkbroadband.com/1GB.zip"
 
     /**
      * 51,758 byte downloadable sample file
      */
-//    private val contentUrl = "https://media.amazonwebservices.com/blog/2016/luna_1.jpg"
+    private val contentUrl = "https://media.amazonwebservices.com/blog/2016/luna_1.jpg"
 
     private val apiClient = ApiClient()
 
