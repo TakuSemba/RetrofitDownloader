@@ -18,7 +18,7 @@ import java.util.List;
 import okio.ByteString;
 
 /**
- * / 番組情報取得 response test
+ * / 番組情報取得 response test test
  */
 public final class MediaResponse extends Message<MediaResponse, MediaResponse.Builder> {
   public static final ProtoAdapter<MediaResponse> ADAPTER = new ProtoAdapter_MediaResponse();
